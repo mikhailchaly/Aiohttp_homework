@@ -53,10 +53,8 @@ async def get_advert(advert_id: int, session: Session):
 
 
 class AdvertView(web.View):
-    @property  # теперь с сессией можно работать как со свойством(без скобок)
-    def session(
-        self,
-    ) -> Session:  # то есть self.session, это и есть то что возращает метод session
+    @property
+    def session(self) -> Session:
         return self.request["session"]
 
     @property
